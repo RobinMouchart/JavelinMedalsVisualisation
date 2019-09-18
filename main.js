@@ -10,6 +10,7 @@ var data = [];
 var dataset = [];
 var COUNTRIES;
 var xScaleData = [];
+var animation = false;
 
 slider.addEventListener('input', e => handleChange(e));
 
@@ -172,16 +173,25 @@ function handleChange(e) {
     renderGraph();
 };
 
-document.getElementById('animate').addEventListener('click', animate)
-function animate(e) {
-    var i = 0
+document.getElementById('animate').addEventListener('click', animate);
+function animate() {
+    var i = csv.length - csv.map((e) => e.Year).reverse().findIndex(y => y<= year)
+    animation = true
     anim = setInterval(() => {
-        year = parseInt(csv[i].Year);
-        slider.value = year;
+        year = parseInt(csv[i].Year)
+        slider.value=year;
         handleChange({'target':{'value':year}});
         if (year == 2016) {
-            clearTimeout(anim);
+            i=-1
         }
         i += 1;
+        if (animation == false) {
+            clearTimeout(anim);
+        }
     }, 500);
+}
+
+document.getElementById('stop').addEventListener('click', stopAnimation);
+function stopAnimation(){
+    animation = false;
 }
