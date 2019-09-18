@@ -174,13 +174,9 @@ function handleChange(e) {
 
 document.getElementById('animate').addEventListener('click', animate)
 function animate(e) {
-    
-    console.log(csv);
     var i = 0
     handleChange({'target':{'value':1908}});
     anim = setInterval(() => {
-        console.log(csv[i])
-        console.log(year);
         year = parseInt(csv[i].Year)
         handleChange({'target':{'value':year}});
         if (year == 2016) {
