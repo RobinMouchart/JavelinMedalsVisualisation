@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Document</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="style.css">
+        <script src="https://d3js.org/d3.v5.min.js"></script>
+    </head>
+    <body>
+        <h1>Médailles cumulées par pays et par année au javelot</h1>
+        <svg height="500" width="960" id="canvas" ></svg>
+        <label for="slider" id="year">Year: 2019</label>
+        <input type="range" min="1908" max="2019" value="2019" id="slider">
+        <button id="animate">Animate</button>
+    </body>
+    <script src="main.js"></script>

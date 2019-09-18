@@ -1,0 +1,20 @@
+.gold {
+    fill: #ffcb0f;
+}
+
+.bronze {
+    fill: #c2500a;
+}
+
+.silver {
+    fill: #b3b0af;
+}
+
+#slider {
+    width: 900px;
+}
+
+text {
+    font-size: 1.2em;
+    font-family: sans-serif;
+}
