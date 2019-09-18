@@ -175,9 +175,9 @@ function handleChange(e) {
 document.getElementById('animate').addEventListener('click', animate)
 function animate(e) {
     var i = 0
-    handleChange({'target':{'value':1908}});
     anim = setInterval(() => {
-        year = parseInt(csv[i].Year)
+        year = parseInt(csv[i].Year);
+        slider.value = year;
         handleChange({'target':{'value':year}});
         if (year == 2016) {
             clearTimeout(anim);
