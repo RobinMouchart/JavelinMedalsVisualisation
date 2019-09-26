@@ -175,7 +175,7 @@ function handleChange(e) {
 
 document.getElementById('animate').addEventListener('click', animate);
 function animate() {
-    if (animtaion == false){
+    if (animation == false){
         var i = csv.length - csv.map((e) => e.Year).reverse().findIndex(y => y<= year) - 1 ;
         animation = true
         anim = setInterval(() => {
