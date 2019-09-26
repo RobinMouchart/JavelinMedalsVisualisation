@@ -175,20 +175,22 @@ function handleChange(e) {
 
 document.getElementById('animate').addEventListener('click', animate);
 function animate() {
-    var i = csv.length - csv.map((e) => e.Year).reverse().findIndex(y => y<= year) - 1 ;
-    animation = true
-    anim = setInterval(() => {
-        year = parseInt(csv[i].Year)
-        slider.value=year;
-        handleChange({'target':{'value':year}});
-        if (year == 2016) {
-            i=-1
-        }
-        i += 1;
-        if (animation == false) {
-            clearTimeout(anim);
-        }
-    }, 500);
+    if (animtaion == false){
+        var i = csv.length - csv.map((e) => e.Year).reverse().findIndex(y => y<= year) - 1 ;
+        animation = true
+        anim = setInterval(() => {
+            year = parseInt(csv[i].Year)
+            slider.value=year;
+            handleChange({'target':{'value':year}});
+            if (year == 2016) {
+                i=-1
+            }
+            i += 1;
+            if (animation == false) {
+                clearTimeout(anim);
+            }
+        }, 500);
+    }
 }
 
 document.getElementById('stop').addEventListener('click', stopAnimation);
